@@ -2,6 +2,13 @@
 #define PID_H
 
 class PID {
+
+  // attribute to store current cross track error
+  double prev_cte;
+
+  // flag only active for first step (related to derivative initialization)
+  bool first_step;
+
 public:
   /*
   * Errors
@@ -38,9 +45,9 @@ public:
   void UpdateError(double cte);
 
   /*
-  * Calculate the total PID error.
+  * Output control command.
   */
-  double TotalError();
+  double OutputControl();
 };
 
 #endif /* PID_H */
