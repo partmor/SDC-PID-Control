@@ -36,7 +36,7 @@ int main()
 
   // initialize PID controller
   double Kp = 0.2;
-  double Ki = 0;
+  double Ki = 1e-5;
   double Kd = 1.0;
   pid.Init(Kp, Ki, Kd);
 
